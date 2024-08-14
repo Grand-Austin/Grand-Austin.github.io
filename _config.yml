@@ -8,6 +8,7 @@
 
 # Basic Site Settings
 theme                    :  minimal-mistakes-jekyll
+minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 locale                   : "en-US"
 title                    : "Weixuan Ding / Homepage"
 title_separator          : "-"
