@@ -12,7 +12,7 @@ title                    : "Weixuan Ding / Homepage"
 title_separator          : "-"
 name                     : &name "Your Name"
 description              : &description "personal description"
-url                      : https://wxding.top # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://grand-austin.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "Grand-Austin/Grand-Austin.github.io"
 
