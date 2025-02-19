@@ -10,7 +10,7 @@ redirect_from:
 I’m currently a third-year undergraduate student at the School of Cyber Science and Engineering, Wuhan University, majoring in Cyberspace Security.
 I’m expected to graduate in Summer 2026.
 <br><br>
-I invite you to view my CV here: [Weixuan Ding's Curriculum Vitae](../files/CV.pdf). Alternatively, you may also find it in the 'CV' section of the top navigation bar.
+My research interests lie in promoting trustworthiness and robustness in AI systems, with a particular focus on trustworthy large language models (LLMs) and federated learning. I am actively seeking collaborations and opportunities as a research intern.
 <br><br>
 Please feel free to contact me via [email](mailto:weixuan.ding@outlook.com):
 Weixuan.Ding@outlook.com
