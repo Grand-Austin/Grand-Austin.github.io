@@ -1,0 +1,45 @@
+---
+const { pathname } = Astro.url;
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/publications/', label: 'Publications' },
+  { href: '/projects/', label: 'Projects' },
+  { href: '/files/CV.pdf', label: 'CV' },
+  { href: '/notes/', label: 'Notes' },
+];
+---
+
+<header class="site-header">
+  <div class="shell nav-wrap">
+    <a class="wordmark" href="/" aria-label="Weixuan Ding, home">WD<span>.</span></a>
+    <nav aria-label="Primary navigation">
+      <ul class="nav-links">
+        {links.map((link) => (
+          <li><a href={link.href} aria-current={pathname === link.href ? 'page' : undefined}>{link.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+      <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+      <span class="theme-toggle-label">Theme</span>
+    </button>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('.theme-toggle');
+  const root = document.documentElement;
+
+  function updateToggle() {
+    const isDark = root.dataset.theme === 'dark';
+    toggle?.setAttribute('aria-pressed', String(isDark));
+    toggle?.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+
+  updateToggle();
+  toggle?.addEventListener('click', () => {
+    root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('theme', root.dataset.theme);
+    updateToggle();
+  });
+</script>

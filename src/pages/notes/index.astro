@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+const notes = (await getCollection('notes')).filter((entry) => !entry.data.draft).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+<BaseLayout title="Notes — Weixuan Ding">
+  <section class="minimal-page-heading shell reveal"><h1>Notes</h1></section>
+  <section class="shell minimal-page-content reveal">{notes.length ? <div class="notes-list">{notes.map((note) => <article><p>{note.data.date.toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' })}</p><a href={`/notes/${note.id}/`}><h2>{note.data.title}</h2><span>Read note ↗</span></a><p>{note.data.description}</p></article>)}</div> : <p class="coming-soon">Coming soon.</p>}</section>
+</BaseLayout>

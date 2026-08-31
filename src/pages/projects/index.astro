@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+const projects = (await getCollection('projects')).filter((entry) => entry.data.status !== 'coming-soon');
+---
+<BaseLayout title="Projects — Weixuan Ding">
+  <section class="minimal-page-heading shell reveal"><h1>Projects</h1></section>
+  <section class="shell minimal-page-content reveal">
+    {projects.length ? <div class="entry-list">{projects.map((entry) => <a href={`/projects/${entry.id}/`}><span>{entry.data.date.getFullYear()}</span><div><h2>{entry.data.title}</h2><p>{entry.data.role}</p></div><b>↗</b></a>)}</div> : <p class="coming-soon">Coming soon.</p>}
+  </section>
+</BaseLayout>
